@@ -3,7 +3,7 @@ package com.design.backend.splitwise.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name ="user_expense_id")
+@Table(name ="user_expense")
 public class UserExpense extends BaseModel{
     @ManyToOne
     @JoinColumn(name ="user_id")
