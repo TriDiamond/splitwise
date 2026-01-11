@@ -1,8 +1,6 @@
 package com.design.backend.splitwise.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -10,7 +8,17 @@ import java.util.List;
 @Table(name = "expense_group")
 public class ExpenseGroup extends BaseModel{
     private String groupName;
-
+    private String description;
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private User admin;
+    @OneToMany(mappedBy = "group")
+    private List<Expense> expenses;
     @ManyToMany
+    @JoinTable(
+            name = "group_members",
+            joinColumns = @JoinColumn(name = "group_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
     private List<User> members;
 }
