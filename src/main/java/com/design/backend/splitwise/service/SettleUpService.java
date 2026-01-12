@@ -1,8 +1,14 @@
 package com.design.backend.splitwise.service;
 
+import com.design.backend.splitwise.model.Transaction;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public interface SettleUpService {
 
-    void settleUpGroup(String groupName, String userName);
+    List<Transaction> settleUpGroup(Long groupId);
 
-    void settleUpUser(String groupName, String userName);
+    List<Transaction> settleUpUser(Long userId);
 }

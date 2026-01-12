@@ -1,7 +1,11 @@
 package com.design.backend.splitwise.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name ="user_expense")
 public class UserExpense extends BaseModel{
@@ -10,7 +14,7 @@ public class UserExpense extends BaseModel{
     private User user;
     @ManyToOne
     private Expense expense;
-    private double amount;
+    private int amount;
     @Enumerated(EnumType.STRING)
     private UserExpenseType userExpenseType;
 }

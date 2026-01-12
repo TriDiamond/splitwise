@@ -5,9 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SettleUpRequest {
-    private String groupName;
-    private String userName;
+public class SettleUpUserRequestDTO {
+    private Long userId;
 }
 
 /*
